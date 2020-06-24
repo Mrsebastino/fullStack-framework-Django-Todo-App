@@ -16,7 +16,7 @@ import dj_database_url
 # this mean if there an environment variable called DEVELOPMENT
 # it will be set to its value otherwise it will be false
 
-development = os.environ.get('DEVELOPMENT', True)
+development = os.environ.get('DEVELOPMENT', False)
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -32,9 +32,11 @@ SECRET_KEY = os.environ.get(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
+if development:
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 
