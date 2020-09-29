@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
+
 
 # this mean if there an environment variable called DEVELOPMENT
 # it will be set to its value otherwise it will be false
